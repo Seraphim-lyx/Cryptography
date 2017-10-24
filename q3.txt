@@ -1,0 +1,63 @@
+(a) [5 marks] Using Google Chrome, navigate to the website click the green padlock in the
+URL bar. Go into the Security tab in Developer Tools and answer the following questions:
+
+url:https://www.youtube.com
+
+(i) What encryption bit-level did you connect at?
+
+	Answer:Youtube uses AES_128_GCM encryption, show the bit-level is 128 bits
+
+(ii) What is the key-exchange mechanism?
+	
+	Answer: X25519
+
+(iii) What is the digital signature mechanism?
+	
+	Answewr: SHA-256 With RSA
+
+(iv) What is the symmetric-key encryption mechanism (including mode of operation)?
+	
+	Answer: AES_128_GCM
+
+(v) What is the message authentication mechanism?
+	
+	Answer: QUIC 
+
+(b) [10 marks] Visit the Qualsys SSL Sever Test website (https://www.ssllabs.com/
+ssltest/) and input the URL of your website. Wait for it to complete its analysis, then
+answer the following questions:
+	
+(i) What letter grade did your website receive? Explain why you think the website
+received the grade it did (for example, if it got a bad mark, what contributed to it?)
+
+	Answer: www.youtube.com got grade A on the website.
+			pros:
+			The domain has DNS Certification Authority Authorization (CAA) Policy 
+			The server deploys HTTP Strict Transport Security (HSTS) with long duration 
+			Static Public Key Pinning observed for this server.
+			
+			cons:
+			A Certificate uses SHA1withRSA ,which is insecure. 
+
+(ii) Which versions of SSL/TLS does the website support?
+	
+	Answer: The website supports TLS 1.0/1.1/1.2
+
+(iii) List the cipher suite that is most preferred by the server. If the server has no preference,
+state as such
+
+	Answer: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b) 
+
+(c) [10 marks] Scenario: you have been tasked with configuring an HTTPS enabled webserver.
+Which TLS ciphersuite would you select as your default? Consult:
+http://www.thesprawl.org/research/tls-and-ssl-cipher-suites/
+for a list of choices. Justify your decision in a few sentences. This question is meant to
+be somewhat open-ended (there is no single "right answer") so feel free to be creative
+or to cite anything that you think would help convince us your choice is secure.
+
+	Answer: I would prefer TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256.
+	
+	Compared to AES_GCM, which suits for modern desktop and laptop computers with hardware supports, the 
+	CHACHA20_POLY1305 is better for devices with limitted ability of calculation such as old computer or mobile phones. Because for such devices, the implementation of the AES algorithm must rely on the software, which can be very costly. In this case, CHACHA20_POLY1305 is a ideal alternative choice.
+
+	On the other hand, ChaCha20 can provide 256 bits of security, which exceeds the 128 bits of the AES-GCM cipher.
