@@ -9,14 +9,15 @@ prikey_c = 1525
 
 def clientCompute(p, g, y_s, prikey_c):
 
-	pubkey_c = g**prikey_c % p
+	pubkey_c = (g**prikey_c) % p
 
-	secret = y_s ** prikey_c % p
+	secret = (y_s ** prikey_c) % p
 
 	return pubkey_c, secret
 
 pubkey_c, secret = clientCompute(p, g, y_s, prikey_c)
-print(len(str(pubkey_c)))
-print(pubkey_c)
+
+
+# print(pubkey_c)
 print(secret)
 

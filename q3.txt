@@ -58,6 +58,6 @@ or to cite anything that you think would help convince us your choice is secure.
 	Answer: I would prefer TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256.
 	
 	Compared to AES_GCM, which suits for modern desktop and laptop computers with hardware supports, the 
-	CHACHA20_POLY1305 is better for devices with limitted ability of calculation such as old computer or mobile phones. Because for such devices, the implementation of the AES algorithm must rely on the software, which can be very costly. In this case, CHACHA20_POLY1305 is a ideal alternative choice.
+	CHACHA20_POLY1305 is better for devices with limitted ability of computing such as old computer or mobile phones. Because for such devices, the implementation of the AES algorithm must rely on the software, which can be very costly. In this case, CHACHA20_POLY1305 is a ideal alternative choice.
 
 	On the other hand, ChaCha20 can provide 256 bits of security, which exceeds the 128 bits of the AES-GCM cipher.
