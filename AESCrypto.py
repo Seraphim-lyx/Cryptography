@@ -15,12 +15,13 @@ class AESCrypto(object):
 
     def __init__(self, plainText, key, mode):
         self.plainText = plainText
-        self.key = self.keyGenerate(key)  # genereate 256bits key by sha256
+        self.key = self.keyGenerate(key) # genereate 256bits key by sha256
+        print(len(self.key))
         self.mode = mode
 
     def keyGenerate(self, key):
         """generate a 256bits key by given key"""
-        print(hashlib.sha256(key.encode('utf8')).hexdigest())
+        print(len(hashlib.sha1(key.encode('utf8')).digest()))
         return hashlib.sha256(key.encode('utf8')).digest()
 
     def Encrypt(self):
@@ -58,14 +59,12 @@ class AESCrypto(object):
 plainText = 'Yaoxi Liu 250941525'
 key = 'Sixteen byte key'
 mode = AES.MODE_CBC
-
 c = AESCrypto(plainText, key, mode)
-
 cipherText = c.Encrypt()
-
 decryptText = c.Decrypt(cipherText)
 
 
 # print(cipherText)
 print([hex(x) for x in bytes(cipherText)])
-print(decryptText)
+print(len(cipherText))
+print(len(decryptText))

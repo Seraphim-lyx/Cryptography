@@ -1,9 +1,6 @@
-import asn1
-from Crypto.Hash import SHA256
-# from Crypto.Util import asn1
-from binascii import hexlify
-import sys
-import random
-
-p = random.randint(0,100)
-print(p)
+from Crypto.Cipher import AES
+from Crypto.Util import Counter
+from Crypto import Random
+import os
+counter = os.urandom(16)
+print([hex(i) for i in counter])

@@ -1,0 +1,10 @@
+1.AGDD
+
+2.[4D,49,44,54,45,52,4D,09,09,09,09,09,09,09,09,09]
+
+3.It's not IND-CPA secure. In IND-CPA game, A can picks two message(m0, m1) and sends them for ciphertext c0,c1 befor challenge. Again in the challenge, A sends m0,m1 and get ciphertext C. A can simply compare C to c0,c1 so that he is always able to get the right answer. 
+
+4.BEEF
+
+5.A picks two largely different messages (m0,m1) under the same length . A sends m0, m1 to B and gets back the ciphertext C. Then A adds few letters behind C to C' and sends it to B for decryption m'. m' will be closed to m0
+or m1, then c would be the exact ciphertext of the message that m' is closed to.

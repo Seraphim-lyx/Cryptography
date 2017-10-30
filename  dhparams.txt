@@ -1,3 +1,15 @@
+(b) [10 marks] Using your program, compute the shared secret between the client and the
+server. Submit the following values: yc, the client’s public key the shared secret s. Place
+these values in a file called dhparams.
+
 client_publickey = 38228178251042076222979407468104411179275708356676780970600953914170844545716792575397836803026892148684970580627301546514451006031666161190604933242848809650204739914399212969875486936287947663551925931738814317443569588051535746952153948749371149134893167346264536391318217039061040386285183535330911075235
 
 secret = 198684121297109300631255694760623677815196049586379963053274945761844960957828622453470349411634785531509706742795893190445464924899051417464445305195656298985703692095794828907755257393288375051627120801863024649048654911856784131610129117666309613719192333735569682863805332059313301655853335562392835632794
+
+
+(c) [5 marks] Recall we said in most cases you should not write your own cryptographic
+implementations (i.e., the “don’t roll your own” principle), yet clearly we’re not applying
+this principle for this assignment. Why might this exercise be considered a reasonable
+exception to the rule?
+	
+	Answer: The Diffie-Hellman we implement is an argreement rather than a mature cryptographic method. We simply implement the core instead of a mature algorithm with guaranted security. In fact, there are some other mature secure algorithms which are based on Diffie-Hellman such as DSA or ElGamal.
